@@ -51,7 +51,6 @@ body {
     background-color: var(--bg-blue);
     font-size: 1.6rem;
     color: var(--white);
-    overflow-x: hidden;
 }
 
 /* header  */
@@ -94,8 +93,8 @@ body {
 @media (max-width:1000px) {
     .header__navlink {
         transition: all 0.3s ease-in-out;
-        position: absolute;
-        top: 120%;
+        position: fixed;
+        top: 10%;
         right: -100%;
         background-color: var(--bg-light-blue);
         flex-direction: column;
@@ -103,7 +102,7 @@ body {
         width: 200px;
         border-radius: 2rem;
         border: 1px solid var(--white);
-        scale: 0;
+        transform: scale(0);
     }
 
     .fa-bars {
@@ -112,7 +111,7 @@ body {
 
     .toggle {
         right: 2%;
-        scale: 1;
+        transform: scale(1);
     }
 }
 
