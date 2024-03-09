@@ -35,10 +35,10 @@
                 document.getElementById('tokensearch1').focus();
             }
 
-            if (custmonDropDwonCLick.nextElementSibling.style.classList.contains(".customDrp")) {
-                custmonDropDwonCLick.nextElementSibling.style.classList.add("active");
+            if (custmonDropDwonCLick.nextElementSibling.classList.contains(".customDrp")) {
+                custmonDropDwonCLick.nextElementSibling.classList.add("active");
             } else {
-                custmonDropDwonCLick.querySelector(".customDrp").style.classList.add("active");
+                custmonDropDwonCLick.querySelector(".customDrp").classList.add("active");
             }
 
             e.stopPropagation();
@@ -50,8 +50,8 @@
     // Outside click
     function outsideClick(e) {
         var container = document.querySelector(".customDrp");
-        if (container.tagName === e.target.tagName && container.querySelector(e.target.tagName).innerText && container.style.visibility) {
-            container.style.remove("active");
+        if (container !== e.target && !container.contains(e.target) && container.classList.contains("active")) {
+            container.classList.remove("active");
         }
     }
 
@@ -84,7 +84,7 @@
     function filterToggelBtnFunction() {
         const filterToggelBtn = document.querySelector(".filterToggelBtn");
         filterToggelBtn.addEventListener("click", (e) => {
-            this.style.classList.toggle("active");
+            this.classList.toggle("active");
         })
     }
 
@@ -93,7 +93,7 @@
     function hideCustomDrpFunction() {
         const hideCustomDrp = document.querySelector(".hideCustomDrp");
         hideCustomDrp.addEventListener("click", function () {
-            this.style.classList.remove("active");
+            this.classList.remove("active");
         })
     }
 
@@ -101,8 +101,8 @@
     function closeIconFunction() {
         const closeIcon = document.querySelector(".closeIcon");
         closeIcon.addEventListener("click", function () {
-            document.querySelector(".customPopup").style.classList.remove("active");
-            document.querySelector(".commonPopup").style.classList.remove("active");
+            document.querySelector(".customPopup").classList.remove("active");
+            document.querySelector(".commonPopup").classList.remove("active");
 
             if (!document.querySelector(".headerMain").classList.contains("active")) {
                 document.body.style.overflow = 'auto';
@@ -117,9 +117,9 @@
         mainTable.addEventListener("scroll", function () {
             let isScroll = e.currentTarget.scrollLeft;
             if (isScroll) {
-                document.querySelector(".ListingTable th:nth-child(3), td:nth-child(3)").style.classList.add("before");
+                document.querySelector(".ListingTable th:nth-child(3), td:nth-child(3)").classList.add("before");
             } else {
-                document.querySelector(".ListingTable th:nth-child(3), td:nth-child(3)").style.classList.remove("before");
+                document.querySelector(".ListingTable th:nth-child(3), td:nth-child(3)").classList.remove("before");
             }
         })
     }
