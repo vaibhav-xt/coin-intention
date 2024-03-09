@@ -5,4 +5,5 @@
 
 
 #### Second Round
-`test.js` contains the code of the second round.
+`test.js` contains the code of the second round.    
+[video](https://www.loom.com/share/9eb333455e8140ea967bf10e2d8e1d40?sid=8ea0c433-4e44-405c-9fbb-02c21a209ffd)
